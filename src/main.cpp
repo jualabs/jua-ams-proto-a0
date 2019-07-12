@@ -6,7 +6,7 @@
 #include <SoftwareSerial.h>
 // #include <TimeLib.h>
 
-#undef DEBUG
+#define DEBUG
 
 // pino A4 -> SDA do MPU
 // pino A5 -> SCL do MPU
@@ -32,9 +32,9 @@ SdFat sdCard;
 SdFile dataFile;
 
 // pino placa pedro
-// const uint8_t chipSelect = 10;
+const uint8_t chipSelect = 10;
 // pino placa jua labs
-const uint8_t chipSelect = 8;
+// const uint8_t chipSelect = 8;
 const uint16_t period = 60000; // 60000 -> 1 minute
 const uint8_t periodMPU = 100;
 const uint8_t num_accel_samples = 10;
