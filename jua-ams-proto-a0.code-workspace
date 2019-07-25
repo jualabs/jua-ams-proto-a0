@@ -20,6 +20,10 @@
 		"terminal.integrated.env.osx": {
 			"PATH": "/Users/familia/.platformio/penv/bin:/Users/familia/.platformio/penv:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
 			"PLATFORMIO_CALLER": "vscode"
+		},
+		"terminal.integrated.env.windows": {
+			"PATH": "C:\\Users\\Pedro\\.platformio\\penv\\Scripts;C:\\Users\\Pedro\\.platformio\\penv;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\StatSoft\\STATISTICA10 \\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Pedro\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\StatSoft\\STATISTICA10 \\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Pedro\\AppData\\Local\\Microsoft\\WindowsApps;",
+			"PLATFORMIO_CALLER": "vscode"
 		}
 	}
 }
