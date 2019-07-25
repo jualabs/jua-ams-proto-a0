@@ -2,6 +2,18 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"name": "mpu6050-dmp",
+			"path": "/Users/familia/Documents/PlatformIO/Projects/mpu6050-dmp"
+		},
+		{
+			"name": "mpu6050-dmp-v0",
+			"path": "/Users/familia/Documents/PlatformIO/Projects/mpu6050-dmp-v0"
+		},
+		{
+			"name": "jua-ams-proto-a1",
+			"path": "/Users/familia/Documents/PlatformIO/Projects/jua-ams-proto-a1"
 		}
 	],
 	"settings": {
