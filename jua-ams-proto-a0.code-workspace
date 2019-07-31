@@ -14,6 +14,14 @@
 		{
 			"name": "jua-ams-proto-a1",
 			"path": "/Users/familia/Documents/PlatformIO/Projects/jua-ams-proto-a1"
+		},
+		{
+			"name": "i2c-jua-ams-test",
+			"path": "/Users/familia/Documents/PlatformIO/Projects/i2c-jua-ams-test"
+		},
+		{
+			"name": "mpu6050-dmp-mega2560",
+			"path": "/Users/familia/Documents/PlatformIO/Projects/mpu6050-dmp-mega2560"
 		}
 	],
 	"settings": {
