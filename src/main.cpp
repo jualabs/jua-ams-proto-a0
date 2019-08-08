@@ -21,7 +21,8 @@ static const uint8_t INTERRUPT_PIN = 18;
 MPU6050 mpu;
 
 // GPS constants | GPS TX - PIN 4 | GPS RX - PIN 5
-static const uint8_t GPS_RX_PIN = 4, GPS_TX_PIN = 5;
+// changed gps tx pin from 4 to 10 due to mega2560 limitations for rx signal 
+static const uint8_t GPS_RX_PIN = 10, GPS_TX_PIN = 5;
 static const uint32_t GPSBaud = 9600;
 // GPS related variables
 TinyGPSPlus gps;
@@ -37,8 +38,8 @@ SdFile data_file;
 
 // application constants
 const uint16_t GPS_READ_PERIOD_MS = 60000;
-const uint16_t MPU_READ_PERIOD_MS = 1000;
-const uint8_t NUM_SAMPLES = 10;
+const uint16_t MPU_READ_PERIOD_MS = 2000;
+const uint8_t NUM_SAMPLES = 20;
 const uint8_t STATUS_LED_PIN = 13;
 
 // application variables
@@ -79,8 +80,6 @@ void dmpDataReady() {
 static void smartDelay(unsigned long ms) {
   unsigned long start = millis();
   do {
-    // refresh the LED status
-    status_led.Update();
     while (ss.available())
       gps.encode(ss.read());
   } while (millis() - start < ms);
@@ -160,6 +159,7 @@ void read_mpu() {
   while(fifo_count >= packet_size) {
     mpu.getFIFOBytes(fifo_buffer, packet_size);
     fifo_count -= packet_size;
+    mpu_samples[cur_sample].ts = now();
     mpu.dmpGetQuaternion(&mpu_samples[cur_sample].q, fifo_buffer);
     mpu_samples[cur_sample].gX = (fifo_buffer[16] << 8) | fifo_buffer[17];
     mpu_samples[cur_sample].gY = (fifo_buffer[20] << 8) | fifo_buffer[21];
@@ -187,12 +187,13 @@ void mpu_setup() {
     Serial.println(F("Testing device connections..."));
     Serial.println(mpu.testConnection() ? F("MPU6050 connection successful") : F("MPU6050 connection failed"));
 
+#if 0
     // wait for ready
     Serial.println(F("\nSend any character to begin DMP programming and demo: "));
     while (Serial.available() && Serial.read()); // empty buffer
     while (!Serial.available());                 // wait for data
     while (Serial.available() && Serial.read()); // empty buffer again
-
+#endif
     // load and configure the DMP
     Serial.println(F("Initializing DMP..."));
     dev_status = mpu.dmpInitialize();
@@ -253,12 +254,13 @@ void setup() {
   }
   // wait for GPS fix
   status_led.Blink(250, 250).Forever();
-#if 0
+#if 1
 #ifdef DEBUG
   Serial.print(F("\nwaiting gps fix: "));
 #endif
   do {
     status_led.Update();
+    smartDelay(250);
   } while (!gps.location.isValid() || !gps.location.isUpdated() || 
            !gps.time.isValid() || !gps.time.isUpdated() ||
            !gps.date.isValid() || !gps.date.isUpdated());

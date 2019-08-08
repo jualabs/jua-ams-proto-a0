@@ -22,6 +22,10 @@
 		{
 			"name": "mpu6050-dmp-mega2560",
 			"path": "/Users/familia/Documents/PlatformIO/Projects/mpu6050-dmp-mega2560"
+		},
+		{
+			"name": "deep-sleep-test",
+			"path": "/Users/familia/Documents/PlatformIO/Projects/deep-sleep-test"
 		}
 	],
 	"settings": {
